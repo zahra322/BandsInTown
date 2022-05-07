@@ -51,7 +51,7 @@ describe("Testing Events", () => {
         cy.get("#search-bar .btn")
             .trigger("click");
         cy.get("#event-list .btn").click();
-        cy.contains("Events");
+        cy.contains("events");
     });
 });
 
