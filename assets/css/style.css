@@ -35,10 +35,6 @@
     width: 55%;
 }
 
-/* #artist-info {
-    overflow: auto;
-} */
-
 span {
     font-weight: bold;
     font-size: 17px;
@@ -68,8 +64,34 @@ h1 {
 
 ul {
     float: left;
+    width: 250px;
+    padding: 11px;
+    border-radius: 3px;
+    min-height: 150px;
+    background-color: rgb(182, 210, 241);
+    margin-left: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+li {
+    margin-left: 10px;
 }
 
 ul span {
     font-weight: bold;
+}
+
+#artist-thumbnail {
+ width: 100px;
+ border-radius: 50px;
+ margin-right: 10px;
+}
+
+#artist-info {
+    display: block;
+}
+
+#artist-details {
+    display: flex;
+    align-items: center;
 }

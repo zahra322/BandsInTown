@@ -47,12 +47,13 @@ $( document ).ready( function () {
     //Displaying the fetched artist information 
     function displayArtistInformation( artist, artistName ) {
         var body = "<tr><td><h2>Artist Details</h2></td></tr>" +
-            "<tr><td><span>Name: </span>" + artist.name + "</td></tr>";
+            "<tr><td id='artist-details'><img id='artist-thumbnail' src=" + artist.thumb_url + ">"+
+            "<div id='artist-info'><span>Name: </span>" + artist.name;
 
         if ( artist.links ) {
             artist.links.forEach( ( link ) => {
                 if ( link.type == 'facebook' )
-                    body += "<tr><td><span>Facebook URL: </span><a href=" + link.url + ">" + link.url + "</a></td></tr>";
+                    body += "<br><span>Facebook URL: </span><a href=" + link.url + ">" + link.url + "</a></div></td></tr>";
             } );
         }
 
@@ -80,13 +81,13 @@ $( document ).ready( function () {
 
     //Displaying fetched artist events
     function displayEvents( events ) {
-        var body = "<h2>Events:</h2>";
+        var body = "<h2>" + events.length + " upcoming events</h2>";
         
         events.forEach( ( event, index ) => {
-            body += "<ul><span> Event "+ ++index +"</span><li>Venue: " + event.venue.name + "</li>" +
+            body += "<ul><span> EVENT DETAILS</span><hr><li>Venue: " + event.venue.name + "</li>" +
                 "<li>City: " + event.venue.city + "</li>" +
                 "<li>Country: " + event.venue.country + "</li>" +
-                "<li>Date And Time: " + moment( event.datetime, 'YYYY-MM-DD HH:mm' ).format( "YYYY-MM-DD HH:mm" ) + "</li>" +
+                "<li>Date: " + moment( event.datetime, 'YYYY-MM-DD' ).format( "YYYY-MM-DD" ) + "</li>" +
                 "</ul>";
         } );
         $( "#event-list" ).html( body );
