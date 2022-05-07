@@ -6,6 +6,7 @@ Now open browser and paste this URL --> http://localhost:5050/
 # Testing
 The tool used for testing is cypress
 File Location --> Assignment\cypress\integration\test.js
+Note: Run 'npm install' before running the following commands.
 # FOR CLI Testing
 Keep the server running and open another cmd in the same location and run --> node_modules\.bin\cypress run
 
